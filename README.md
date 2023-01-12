@@ -1,5 +1,9 @@
 # PXL8 - Pixel Art AI 
-
+<p align="center">
+    <br>
+    <img src="https://i.imgur.com/ynRrj2S.png" width="400"/>
+    <br>
+<p>
 ## Welcome to the PXL8 WebUI script!
 **PXL8 is a Pixel Art specific model**, this repo contains the script to complete the pixel art workflow using Qunatization, Dithering, and more.
 
