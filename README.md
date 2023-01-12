@@ -3,7 +3,9 @@
     <br>
     <img src="https://i.imgur.com/ynRrj2S.png" width="400"/>
     <br>
+    <a href='https://ko-fi.com/O4O5GU04F' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a> <a href='https://discord.com/invite/527QQv9vFk' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cincydiscord.com/wp-content/uploads/2019/02/CINCYDISCORDJOIN.png' border='0' alt='Join the discord :)' /></a>
 <p>
+
 ## Welcome to the PXL8 WebUI script!
 **PXL8 is a Pixel Art specific model**, this repo contains the script to complete the pixel art workflow using Qunatization, Dithering, and more.
 
