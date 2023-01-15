@@ -9,11 +9,12 @@ import subprocess
 import os
 import sys
 
+script_dir = scripts.basedir()
+
 #https://github.com/mcychan/nQuantCpp licensed under the GNU General Public License v3.0
 
 class Script(scripts.Script):  
     def __init__(self):
-        self.script_dir = os.path.dirname(os.path.realpath(__name__))+os.sep+'scripts'+os.sep
         self.nQuant = 'nQuantCpp.exe'
         self.palette_algos = ['PNN', 'PNNLAB', 'NEU', 'WU', 'EAS', 'SPA', 'DIV', 'DL3', 'MMC','Median', 'Maximum Coverage', 'Octree']
         self.color_palletes = ['Automatic','NES']
@@ -44,7 +45,7 @@ class Script(scripts.Script):
             isDither = 1 if dither else 0
             isSmart = 1 if palette_algo in self.palette_algos[:9] else 0
             #isCustomPalette = 1 if custom_palette != "None" else 0
-            temp = os.path.join(self.script_dir,"temp.png")
+            temp = os.path.join(script_dir,"temp.png")
             out_width, out_height = im.size
             sample_width = int(out_width / downscale)
             sample_height = int(out_height / downscale)
@@ -59,8 +60,8 @@ class Script(scripts.Script):
                 else:
                     work = work.convert("RGB")
                     work.save(temp)
-                    run = subprocess.run([os.path.join(self.script_dir, self.nQuant), temp, f"/m ",str(color_pal_size), f"/a ",palette_algo, "/d ","y" if isDither==1 else "n",], stdout=subprocess.DEVNULL)
-                    s_t = os.path.join(self.script_dir,f"temp-{palette_algo}quant{color_pal_size}.png")
+                    run = subprocess.run([os.path.join(script_dir, self.nQuant), temp, f"/m ",str(color_pal_size), f"/a ",palette_algo, "/d ","y" if isDither==1 else "n",], stdout=subprocess.DEVNULL)
+                    s_t = os.path.join(script_dir,f"temp-{palette_algo}quant{color_pal_size}.png")
                     #open s_t without holding it open
                     work = Image.open(s_t).convert("RGB")
                     os.remove(s_t)
