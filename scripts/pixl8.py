@@ -74,5 +74,7 @@ class Script(scripts.Script):
         out = process_images(p)
         for i in range(len(out.images)):
             out.images[i] = process(out.images[i])
+            if opts.samples_format == "png" or opts.samples_format == "jpg" or opts.samples_format == "jpeg":
+                out.images[i] = out.images[i].convert('RGB')
             images.save_image(out.images[i], p.outpath_samples, "", out.seed + i, out.prompt, opts.samples_format, info= out.info, p=p)
         return out
