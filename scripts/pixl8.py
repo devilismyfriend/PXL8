@@ -74,5 +74,5 @@ class Script(scripts.Script):
         out = process_images(p)
         for i in range(len(out.images)):
             out.images[i] = process(out.images[i])
-            images.save_image(out.images[i], p.outpath_samples, "", out.seed + i, out.prompt, opts.samples_format, info= out.info, p=p)
+            images.save_image(out.images[i], p.outpath_samples, "", out.seed + i, out.prompt, opts.samples_format, info= out.info + f", PXL8 Algo: {palette_algo}, Downscale: {downscale}, Palette: {color_pal_size}, Dither: {dither}, Rescale to Original Size: {rescale}, Rescale Before Quantize: {rescale_before}", p=p)
         return out
